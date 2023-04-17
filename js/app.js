@@ -58,6 +58,7 @@ if (text.length >= 3) {
     decry.classList.remove('off');
     alerta.innerHTML='';
     alerta.classList.remove('activo');
+    resultado.classList.remove("show")
 }
 if(text.length <= 1){
     encry.classList.add('off');
@@ -73,10 +74,15 @@ encry.addEventListener('click', function(){
     }else{ToggleCry(1,textarea.value);}
 });
 decry.addEventListener('click', function(){
+    if(textarea.classList.contains('paste')){
+    var descriptar = textarea.value;  
+    }else{
+    var descriptar = document.querySelector('.re').innerText;
+    }
     if(!resultado.classList.contains('show')){
     alertas(2)
     }else{
-    ToggleCry(2,textarea.value);
+    ToggleCry(2,descriptar);
    }  
 });
 function alertas(val){
@@ -101,3 +107,9 @@ copy.addEventListener('click', function(){
         alertas(3)
     }
 }); 
+textarea.addEventListener("paste", (event) => {
+    let paste = (event.clipboardData || window.clipboardData).getData("text");
+    if(paste){
+    textarea.classList.add('paste');
+    }
+});
