@@ -73,11 +73,15 @@ encry.addEventListener('click', function(){
     }else{ToggleCry(1,textarea.value);}
 });
 decry.addEventListener('click', function(){
-    var descriptar = document.querySelector('.re')
+    if(textarea.classList.contains('paste')){
+    var descriptar = textarea.value;  
+    }else{
+    var descriptar = document.querySelector('.re').innerText;
+    }
     if(!resultado.classList.contains('show')){
     alertas(2)
     }else{
-    ToggleCry(2,descriptar.innerText);
+    ToggleCry(2,descriptar);
    }  
 });
 function alertas(val){
@@ -102,4 +106,10 @@ copy.addEventListener('click', function(){
         alertas(3)
     }
 }); 
-
+textarea.addEventListener("paste", (event) => {
+    //event.preventDefault();
+    let paste = (event.clipboardData || window.clipboardData).getData("text");
+    if(paste){
+    textarea.classList.add('paste');
+    }
+});
