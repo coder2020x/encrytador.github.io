@@ -80,7 +80,7 @@ decry.addEventListener('click', function(){
 function alertas(val,txt){
     if(val==1){
     var a = "No se permiten letras mayúsculas";
-    var respuesta = confirm('Desea Cambiar el   carácter "'+txt+'" a minúscula automáticamente ?');
+    var respuesta = confirm('Desea Cambiar el carácter "'+txt+'" a minúscula automáticamente ?');
     }else if(val==2){
     var a = "Por favor escribir un texto ..!!";
     }else{
