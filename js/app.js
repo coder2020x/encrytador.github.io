@@ -45,7 +45,7 @@ var text = textarea.value;
 if (text != text.toLowerCase()) {
     if (text.length  >= 0) {
     copy.classList.remove('activa');
-    alertas(1);
+    alertas(1,text);
    }
   }
 if (text.length >= 3) {
@@ -77,10 +77,10 @@ decry.addEventListener('click', function(){
     ToggleCry(2,textarea.value);
    }  
 });
-function alertas(val){
+function alertas(val,txt=null){
     if(val==1){
     var a = "No se permiten letras mayúsculas";
-    var respuesta = confirm("Desea Cambiar el   carácter a Minúscula automático ?");
+    var respuesta = confirm("Desea Cambiar el   carácter " txt " a Minúscula automático ?");
     if(respuesta){
     textarea.value=textarea.value.toLowerCase();
     }
