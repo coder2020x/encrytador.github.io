@@ -45,7 +45,7 @@ var text = textarea.value;
 if (text != text.toLowerCase()) {
     if (text.length  >= 0) {
     copy.classList.remove('activa');
-    alertas(1,text);
+    alertas(1,textarea.value);
    }
   }
 if (text.length >= 3) {
@@ -81,9 +81,6 @@ function alertas(val,txt=null){
     if(val==1){
     var a = "No se permiten letras mayúsculas";
     var respuesta = confirm("Desea Cambiar el   carácter " txt " a Minúscula automático ?");
-    if(respuesta){
-    textarea.value=textarea.value.toLowerCase();
-    }
     }else if(val==2){
     var a = "Por favor escribir un texto ..!!";
     }else{
@@ -91,6 +88,9 @@ function alertas(val,txt=null){
     }
     alerta.innerHTML=a;
     alerta.classList.add('activo');
+    if(respuesta){
+    textarea.value=textarea.value.toLowerCase();
+    }
     setTimeout(()=>{
         alerta.innerHTML='';
         alerta.classList.remove('activo');
