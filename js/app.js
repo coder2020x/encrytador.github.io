@@ -66,7 +66,9 @@ if(text.length <= 1){
 encry.addEventListener('click', function(){
     if(textarea.value==null || textarea.value==''){
     alertas(2)
-    }else{ToggleCry(1,textarea.value);}
+    }else{
+    ToggleCry(1,textarea.value);
+    }
 });
 decry.addEventListener('click', function(){
     if( textarea.value==null || textarea.value==''){
@@ -88,7 +90,7 @@ function alertas(val){
     setTimeout(()=>{
         alerta.innerHTML='';
         alerta.classList.remove('activo');
-    },3000);
+    },5000);
 }
 copy.addEventListener('click', function(){
     var texto_res = document.querySelector('.re').innerText;
