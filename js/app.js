@@ -45,7 +45,7 @@ var text = textarea.value;
 if (text != text.toLowerCase()) {
     if (text.length  >= 0) {
     copy.classList.remove('activa');
-    alertas(1,textarea.value);
+    alertas(1,text);
    }
   }
 if (text.length >= 3) {
@@ -65,19 +65,19 @@ if(text.length <= 1){
 });
 encry.addEventListener('click', function(){
     if(textarea.value==null || textarea.value==''){
-    alertas(2)
+    alertas(2,null)
     }else{
     ToggleCry(1,textarea.value);
     }
 });
 decry.addEventListener('click', function(){
     if( textarea.value==null || textarea.value==''){
-    alertas(2)
+    alertas(2,null)
     }else{
     ToggleCry(2,textarea.value);
    }  
 });
-function alertas(val,txt=null){
+function alertas(val,txt){
     if(val==1){
     var a = "No se permiten letras mayúsculas";
     var respuesta = confirm("Desea Cambiar el   carácter " txt " a Minúscula automático ?");
