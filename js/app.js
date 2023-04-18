@@ -45,7 +45,7 @@ var text = textarea.value;
 if (text != text.toLowerCase()) {
     if (text.length  > 0 && text.length < 2) {
     copy.classList.remove('activa');
-    alertas(1,text.text);
+    alertas(1,text);
    }
   }
 if (text.length >= 3) {
