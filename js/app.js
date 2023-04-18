@@ -8,6 +8,7 @@ var alerta = document.querySelector('.alerta');
 var consulta = document.querySelector('.Consulta');
 var resultado= document.querySelector('.resultado');
 var copy= document.querySelector('.copy');
+var contador=0;
 var html=`<img src="image/persona.svg" alt="persona">
 <div class="sin-texto">
  <span class="texto-a">Ningún mensaje fue encontrado</span>
@@ -43,7 +44,8 @@ function ToggleCry(val,dato){
 textarea.addEventListener('input', function(){
 var text = textarea.value;
 if (text != text.toLowerCase()) {
-    if (text.length  > 0 && text.length < 2) {
+    if (text.length  > 0 && contador==0) {
+     contador++;
     copy.classList.remove('activa');
     alertas(1,text);
    }
@@ -90,6 +92,7 @@ function alertas(val,txt){
     alerta.classList.add('activo');
     if(respuesta){
     textarea.value=textarea.value.toLowerCase();
+    contador=0;
     }
     setTimeout(()=>{
         alerta.innerHTML='';
