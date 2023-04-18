@@ -43,14 +43,9 @@ function ToggleCry(val,dato){
 textarea.addEventListener('input', function(){
 var text = textarea.value;
 if (text != text.toLowerCase()) {
-    if (text.length  >= 1) {
-    textarea.disabled = true;
+    if (text.length  >= 0) {
     copy.classList.remove('activa');
     alertas(1);
-    setTimeout(()=>{
-    textarea.disabled=false;
-    textarea.value = textarea.value.toString().slice(0, -1);
-    },1000);
    }
   }
 if (text.length >= 3) {
