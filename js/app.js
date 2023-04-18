@@ -90,7 +90,7 @@ function alertas(val){
     setTimeout(()=>{
         alerta.innerHTML='';
         alerta.classList.remove('activo');
-    },5000);
+    },20000);
 }
 copy.addEventListener('click', function(){
     var texto_res = document.querySelector('.re').innerText;
