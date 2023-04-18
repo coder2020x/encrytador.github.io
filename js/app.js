@@ -43,9 +43,9 @@ function ToggleCry(val,dato){
 textarea.addEventListener('input', function(){
 var text = textarea.value;
 if (text != text.toLowerCase()) {
-    if (text.length  > 0 text.length < 2) {
+    if (text.length  > 0 && text.length < 2) {
     copy.classList.remove('activa');
-    alertas(1,text.textarea.value);
+    alertas(1,text.text);
    }
   }
 if (text.length >= 3) {
